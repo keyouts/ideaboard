@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mood Board</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="toolbar">
+    <div class="toolbar-row">
+      <button id="addNote">Add Note</button>
+      <button id="deleteNote">Delete Selected</button>
+      <select id="tagFilter">
+        <option value="all">Show All</option>
+      </select>
+    </div>
+    <div class="toolbar-row">
+      <input type="text" id="newTagInput" placeholder="New tag name" />
+      <button id="createTag">Create Tag</button>
+      <select id="tagDeleteSelect"></select>
+      <button id="deleteTag">Delete Tag</button>
+    </div>
+  </div>
+
+  <div id="board"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
