@@ -7,25 +7,34 @@
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <div class="toolbar">
+  <h1 id="ideaBoardHeading">Idea Board</h1>
+
+  <div class="toolbar" role="region" aria-labelledby="ideaBoardHeading" aria-describedby="toolbarDescription">
+    <p id="toolbarDescription" class="visually-hidden">
+      Use the toolbar to add or delete notes, filter by tags, and manage tag creation or deletion.
+    </p>
+
     <div class="toolbar-row">
-      <button id="addNote">Add Note</button>
-      <button id="deleteNote">Delete Selected</button>
-      <select id="tagFilter">
+      <button id="addNote" aria-label="Add a new note to the board">Add Note</button>
+      <button id="deleteNote" aria-label="Delete selected notes from the board">Delete Selected</button>
+      <label for="tagFilter" class="visually-hidden">Filter notes by tag</label>
+      <select id="tagFilter" aria-label="Filter notes by tag">
         <option value="all">Show All</option>
       </select>
     </div>
+
     <div class="toolbar-row">
-      <input type="text" id="newTagInput" placeholder="New tag name" />
-      <button id="createTag">Create Tag</button>
-      <select id="tagDeleteSelect"></select>
-      <button id="deleteTag">Delete Tag</button>
+      <label for="newTagInput" class="visually-hidden">Enter a new tag name</label>
+      <input type="text" id="newTagInput" placeholder="New tag name" aria-label="New tag name" />
+      <button id="createTag" aria-label="Create a new tag">Create Tag</button>
+      <label for="tagDeleteSelect" class="visually-hidden">Select a tag to delete</label>
+      <select id="tagDeleteSelect" aria-label="Select a tag to delete"></select>
+      <button id="deleteTag" aria-label="Delete selected tag">Delete Tag</button>
     </div>
   </div>
 
-  <div id="board"></div>
+  <div id="board" role="region" aria-label="Idea board area where notes are displayed" aria-live="polite"></div>
 
   <script src="script.js"></script>
 </body>
 </html>
-
